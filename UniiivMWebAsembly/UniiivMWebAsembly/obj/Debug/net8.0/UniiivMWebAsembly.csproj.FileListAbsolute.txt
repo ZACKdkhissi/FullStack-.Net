@@ -2060,3 +2060,4 @@ C:\Users\Abdelmourhit\source\repos\FullStack\UniiivMWebAsembly\UniiivMWebAsembly
 C:\Users\Abdelmourhit\source\repos\FullStack\UniiivMWebAsembly\UniiivMWebAsembly\obj\Debug\net8.0\refint\UniiivMWebAsembly.dll
 C:\Users\Abdelmourhit\source\repos\FullStack\UniiivMWebAsembly\UniiivMWebAsembly\obj\Debug\net8.0\UniiivMWebAsembly.pdb
 C:\Users\Abdelmourhit\source\repos\FullStack\UniiivMWebAsembly\UniiivMWebAsembly\obj\Debug\net8.0\ref\UniiivMWebAsembly.dll
+C:\Users\Abdelmourhit\source\repos\FullStack\UniiivMWebAsembly\UniiivMWebAsembly\obj\Debug\net8.0\UniiivMWebAsembly.sourcelink.json

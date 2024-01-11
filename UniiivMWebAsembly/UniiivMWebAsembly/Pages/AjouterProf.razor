@@ -1,0 +1,37 @@
+﻿@page "/professors/add"
+@using UniiivMWebAsembly.Services
+@using UniiivMWebAsembly.Entities
+@inject ProfessorService ProfessorService
+
+<h2>Add Professor</h2>
+
+<EditForm Model="@newProfessor" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label for="Name">Name:</label>
+        <InputText id="Name" class="form-control" @bind-Value="newProfessor.Name" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Professor</button>
+</EditForm>
+
+@code {
+    private Professor newProfessor = new Professor();
+
+    private async Task HandleValidSubmit()
+    {
+        // Aucun besoin d'ajouter des CourseProfessors ici, car ils sont initialisés par défaut dans le modèle
+        var response = await ProfessorService.AddProfessorAsync(newProfessor);
+        if (response.IsSuccessStatusCode)
+        {
+            // Gérer le succès, par exemple en redirigeant vers la liste des professeurs
+        }
+        else
+        {
+            // Gérer l'erreur
+        }
+    }
+}
+

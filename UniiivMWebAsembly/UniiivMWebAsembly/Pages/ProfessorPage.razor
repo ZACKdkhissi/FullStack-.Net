@@ -1,0 +1,79 @@
+﻿@page "/professors"
+@using UniiivMWebAsembly.Services
+@using UniiivMWebAsembly.Entities
+
+@inject ProfessorService ProfessorService
+@inject NavigationManager NavigationManager
+
+
+<h2>List of Professors</h2>
+
+<button class="btn btn-success" @onclick="() => AddProfessor()">Add Professor</button>
+
+
+@if (professors == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var professor in professors)
+            {
+                <tr>
+                    <td>@professor.ProfessorId</td>
+                    <td>@professor.Name</td>
+                    <td>
+                        <button class="btn btn-primary" @onclick="() => ViewDetails(professor.ProfessorId)">Details</button>
+                        <button class="btn btn-secondary" @onclick="() => EditProfessor(professor.ProfessorId)">Edit</button>
+                        <button class="btn btn-danger" @onclick="() => DeleteProfessor(professor.ProfessorId)">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Professor> professors;
+
+    protected override async Task OnInitializedAsync()
+    {
+        professors = await ProfessorService.GetProfessorsAsync();
+    }
+
+    private async Task DeleteProfessor(int professorId)
+    {
+        var response = await ProfessorService.DeleteProfessorAsync(professorId);
+        if (response.IsSuccessStatusCode)
+        {
+            professors = professors.Where(p => p.ProfessorId != professorId).ToList();
+        }
+        else
+        {
+            // Handle the error, possibly with a user notification
+        }
+    }
+
+    private void ViewDetails(int professorId)
+    {
+        NavigationManager.NavigateTo($"/professor-details/{professorId}");
+    }
+    private void EditProfessor(int professorId)
+    {
+        NavigationManager.NavigateTo($"/edit-professor/{professorId}");
+    }
+
+    private void AddProfessor()
+    {
+        NavigationManager.NavigateTo("/professors/add");
+    }
+    
+}

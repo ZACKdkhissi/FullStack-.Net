@@ -1,0 +1,80 @@
+﻿@page "/edit-professor/{ProfessorId}"
+@using UniiivMWebAsembly.Services
+@using UniiivMWebAsembly.Entities
+@inject ProfessorService ProfessorService
+@inject NavigationManager NavigationManager
+
+<h3>Edit Professor</h3>
+
+@if (existingProfessor != null)
+{
+    <EditForm Model="existingProfessor" OnValidSubmit="HandleValidSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <div class="form-group">
+            <label for="Name">Name:</label>
+            <InputText id="Name" class="form-control" @bind-Value="existingProfessor.Name" />
+        </div>
+
+        <button type="submit" class="btn btn-success">Save Changes</button>
+    </EditForm>
+}
+else if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div class="alert alert-danger" role="alert">
+        @errorMessage
+    </div>
+}
+else
+{
+    <p><em>Loading...</em></p>
+}
+
+@code {
+    [Parameter]
+    public string ProfessorId { get; set; }
+
+    private int parsedProfessorId;
+    private Professor existingProfessor;
+    private string errorMessage;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (int.TryParse(ProfessorId, out parsedProfessorId))
+        {
+            try
+            {
+                existingProfessor = await ProfessorService.GetProfessorAsync(parsedProfessorId);
+            }
+            catch (Exception ex)
+            {
+                errorMessage = $"An error occurred while trying to get professor details: {ex.Message}";
+            }
+        }
+        else
+        {
+            errorMessage = "The provided professor ID is not valid.";
+        }
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        try
+        {
+            var response = await ProfessorService.UpdateProfessorAsync(existingProfessor);
+            if (response.IsSuccessStatusCode)
+            {
+                NavigationManager.NavigateTo("/professors");
+            }
+            else
+            {
+                errorMessage = "An error occurred while updating the professor.";
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"An error occurred: {ex.Message}";
+        }
+    }
+}
