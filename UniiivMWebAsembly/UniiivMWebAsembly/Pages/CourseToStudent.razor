@@ -1,0 +1,70 @@
+﻿@page "/assign-student"
+@using UniiivMWebAsembly.Services
+@using UniiivMWebAsembly.Entities
+@inject CourseService CourseService
+@inject StudentService StudentService
+@inject NavigationManager NavigationManager
+
+<h3>Assign Student to Course</h3>
+<button class="btn btn-secondary" @onclick="GoToStudentCourse">Go to Students and Their Courses</button>
+
+@if (courses == null || students == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <EditForm Model="courseStudent" OnValidSubmit="HandleValidSubmit">
+        <div class="form-group">
+            <label for="Course">Select Course:</label>
+            <select @bind="courseStudent.CourseId" class="form-control">
+                @foreach (var course in courses)
+                {
+                    <option value="@course.CourseId">@course.Title</option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="Student">Select Student:</label>
+            <select @bind="courseStudent.StudentId" class="form-control">
+                @foreach (var student in students)
+                {
+                    <option value="@student.ID">@student.FirstMidName @student.LastName</option>
+                }
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Assign</button>
+    </EditForm>
+}
+
+@code {
+    private List<Course> courses;
+    private List<Student> students;
+    private StudentCourse courseStudent = new StudentCourse();
+
+    protected override async Task OnInitializedAsync()
+    {
+        courses = await CourseService.GetCoursesAsync();
+        students = await StudentService.GetStudentsAsync();
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        var result = await StudentService.AddCourseToStudentAsync(courseStudent.StudentId, courseStudent.CourseId);
+        if (result)
+        {
+            NavigationManager.NavigateTo("/students");
+        }
+        else
+        {
+            // Handle errors here
+        }
+    }
+
+    private void GoToStudentCourse()
+    {
+        NavigationManager.NavigateTo("/studentcourse");
+    }
+}

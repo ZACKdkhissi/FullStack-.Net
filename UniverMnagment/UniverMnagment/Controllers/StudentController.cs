@@ -135,8 +135,40 @@ namespace UniverMnagment.Controllers
             return Ok("L'étudiant a été inscrit au cours avec succès.");
         }
 
+        [HttpGet("withcourses")]
+        public async Task<ActionResult<IEnumerable<StudentDto>>> GetStudentsWithCourses()
+        {
+            var students = await _context.Students
+                .Include(s => s.StudentCourses)
+                .ThenInclude(sc => sc.Course)
+                .Select(s => new StudentDto
+                {
+                    StudentId = s.ID,
+                    LastName = s.LastName,
+                    FirstMidName = s.FirstMidName,
+                    EnrollmentDate = s.EnrollmentDate,
+                    Courses = s.StudentCourses.Select(sc => new CourseDto
+                    {
+                        CourseId = sc.Course.CourseId,
+                        Title = sc.Course.Title
+                    }).ToList()
+                })
+                .ToListAsync();
+
+            return students;
+        }
+
+
 
 
     }
 }
 
+public class StudentDto
+{
+    public int StudentId { get; set; }
+    public string LastName { get; set; }
+    public string FirstMidName { get; set; }
+    public DateTime EnrollmentDate { get; set; }
+    public List<CourseDto> Courses { get; set; }
+}

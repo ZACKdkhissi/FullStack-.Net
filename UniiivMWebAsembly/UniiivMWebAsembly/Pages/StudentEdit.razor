@@ -1,0 +1,62 @@
+﻿@page "/editstudent/{studentId}"
+@using UniiivMWebAsembly.Services
+@using UniiivMWebAsembly.Entities
+
+@inject StudentService StudentService
+@inject NavigationManager NavigationManager
+
+<h3>Edit Student</h3>
+
+@if (student == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <EditForm Model="student" OnValidSubmit="HandleValidSubmit">
+        <div class="form-group">
+            <label for="LastName">Last Name:</label>
+            <InputText @bind-Value="student.LastName" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label for="FirstMidName">First Name:</label>
+            <InputText @bind-Value="student.FirstMidName" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label for="EnrollmentDate">Enrollment Date:</label>
+            <InputDate @bind-Value="student.EnrollmentDate" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+    </EditForm>
+}
+
+@code {
+    private Student student;
+
+    [Parameter]
+    public string studentId { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (!string.IsNullOrEmpty(studentId) && int.TryParse(studentId, out int id))
+        {
+            student = await StudentService.GetStudentAsync(id);
+        }
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        var result = await StudentService.UpdateStudentAsync(student);
+        if (result.IsSuccessStatusCode)
+        {
+            NavigationManager.NavigateTo("/students");
+        }
+        else
+        {
+            // Handle errors here
+        }
+    }
+}

@@ -1,0 +1,37 @@
+﻿@page "/login"
+@layout SimpleLayout
+@inject NavigationManager NavigationManager
+
+
+<h3>Login</h3>
+
+<div>
+    <input type="text" @bind="username" placeholder="Username" />
+    <input type="password" @bind="password" placeholder="Password" />
+    <button @onclick="PerformLogin">Login</button>
+    @if (showErrorMessage)
+    {
+        <div class="error">Invalid credentials</div>
+    }
+</div>
+
+@code {
+    private string username;
+    private string password;
+    private bool showErrorMessage = false;
+
+    private void PerformLogin()
+    {
+        if (username == "admin" && password == "admin")
+        {
+            // Si les identifiants sont corrects
+            NavigationManager.NavigateTo("/mainpage"); // Rediriger vers la page principale
+        }
+        else
+        {
+            // Si les identifiants sont incorrects
+            showErrorMessage = true; // Afficher un message d'erreur
+        }
+    }
+
+}

@@ -1,0 +1,53 @@
+﻿@page "/course-details/{CourseId:int}"
+@using UniiivMWebAsembly.Services
+@using UniiivMWebAsembly.Entities
+@inject CourseService CourseService
+
+<h3>Course Details</h3>
+
+@if (course == null)
+{
+    <p><em>Loading course details...</em></p>
+}
+else
+{
+    <dl class="row">
+        <dt class="col-sm-3">ID:</dt>
+        <dd class="col-sm-9">@course.CourseId</dd>
+
+        <dt class="col-sm-3">Title:</dt>
+        <dd class="col-sm-9">@course.Title</dd>
+
+        <dt class="col-sm-3">Credits:</dt>
+        <dd class="col-sm-9">@course.Credits</dd>
+
+        <!-- Si vous souhaitez afficher les professeurs liés au cours -->
+        <dt class="col-sm-3">Professors:</dt>
+        <dd class="col-sm-9">
+            @foreach (var cp in course.CourseProfessors)
+            {
+                <div>@cp.Professor.Name</div>
+            }
+        </dd>
+
+        <!-- Si vous souhaitez afficher les étudiants inscrits au cours -->
+        <dt class="col-sm-3">Students:</dt>
+        <dd class="col-sm-9">
+            @foreach (var sc in course.StudentCourses)
+            {
+                <div>@sc.Student.LastName</div>
+            }
+        </dd>
+    </dl>
+}
+
+@code {
+    [Parameter]
+    public int CourseId { get; set; }
+    private Course course;
+
+    protected override async Task OnInitializedAsync()
+    {
+        course = await CourseService.GetCourseAsync(CourseId);
+    }
+}

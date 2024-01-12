@@ -1,0 +1,72 @@
+﻿@page "/assign-professor"
+@using UniiivMWebAsembly.Services
+@using UniiivMWebAsembly.Entities
+@inject CourseService CourseService
+@inject ProfessorService ProfessorService
+@inject NavigationManager NavigationManager
+
+<h3>Assign Professor to Course</h3>
+<button class="btn btn-secondary" @onclick="GoToProfCourse">Go to Professors and Their Courses</button>
+
+
+@if (courses == null || professors == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <EditForm Model="courseProfessor" OnValidSubmit="HandleValidSubmit">
+        <div class="form-group">
+            <label for="Course">Select Course:</label>
+            <select @bind="courseProfessor.CourseId" class="form-control">
+                @foreach (var course in courses)
+                {
+                    <option value="@course.CourseId">@course.Title</option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="Professor">Select Professor:</label>
+            <select @bind="courseProfessor.ProfessorId" class="form-control">
+                @foreach (var professor in professors)
+                {
+                    <option value="@professor.ProfessorId">@professor.Name</option>
+                }
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Assign</button>
+    </EditForm>
+}
+
+@code {
+    private List<Course> courses;
+    private List<Professor> professors;
+    private CourseProfessor courseProfessor = new CourseProfessor();
+
+    protected override async Task OnInitializedAsync()
+    {
+        courses = await CourseService.GetCoursesAsync();
+        professors = await ProfessorService.GetProfessorsAsync(); // You need to implement this method.
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        var result = await CourseService.AddProfessorToCourseAsync(courseProfessor.CourseId, courseProfessor.ProfessorId);
+        if (result.IsSuccessStatusCode)
+        {
+            NavigationManager.NavigateTo("/courses");
+        }
+        else
+        {
+            // Handle errors here
+        }
+    }
+
+    private void GoToProfCourse()
+    {
+        NavigationManager.NavigateTo("/profcourse");
+    }
+
+}

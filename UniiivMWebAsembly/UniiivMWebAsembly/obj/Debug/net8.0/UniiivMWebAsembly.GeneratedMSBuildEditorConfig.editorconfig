@@ -26,16 +26,48 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Abdelmourhit/source/repos/FullStack/UniiivMWebAsembly/UniiivMWebAsembly/Pages/AffecterProfcourse.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWZmZWN0ZXJQcm9mY291cnNlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdelmourhit/source/repos/FullStack/UniiivMWebAsembly/UniiivMWebAsembly/Pages/AjouterCourse.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWpvdXRlckNvdXJzZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Abdelmourhit/source/repos/FullStack/UniiivMWebAsembly/UniiivMWebAsembly/Pages/AjouterProf.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWpvdXRlclByb2YucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdelmourhit/source/repos/FullStack/UniiivMWebAsembly/UniiivMWebAsembly/Pages/Component.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcG9uZW50LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Abdelmourhit/source/repos/FullStack/UniiivMWebAsembly/UniiivMWebAsembly/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Abdelmourhit/source/repos/FullStack/UniiivMWebAsembly/UniiivMWebAsembly/Pages/CourseDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlRGV0YWlscy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdelmourhit/source/repos/FullStack/UniiivMWebAsembly/UniiivMWebAsembly/Pages/CoursePage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlUGFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdelmourhit/source/repos/FullStack/UniiivMWebAsembly/UniiivMWebAsembly/Pages/CourseStudentDetail.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlU3R1ZGVudERldGFpbC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdelmourhit/source/repos/FullStack/UniiivMWebAsembly/UniiivMWebAsembly/Pages/CourseToStudent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlVG9TdHVkZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Abdelmourhit/source/repos/FullStack/UniiivMWebAsembly/UniiivMWebAsembly/Pages/DetailsProf.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGV0YWlsc1Byb2YucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdelmourhit/source/repos/FullStack/UniiivMWebAsembly/UniiivMWebAsembly/Pages/EditCourse.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdENvdXJzZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Abdelmourhit/source/repos/FullStack/UniiivMWebAsembly/UniiivMWebAsembly/Pages/EditProf.razor]
@@ -46,8 +78,40 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Abdelmourhit/source/repos/FullStack/UniiivMWebAsembly/UniiivMWebAsembly/Pages/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdelmourhit/source/repos/FullStack/UniiivMWebAsembly/UniiivMWebAsembly/Pages/MainPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFpblBhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Abdelmourhit/source/repos/FullStack/UniiivMWebAsembly/UniiivMWebAsembly/Pages/ProfessorPage.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmVzc29yUGFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdelmourhit/source/repos/FullStack/UniiivMWebAsembly/UniiivMWebAsembly/Pages/RedirectToLogin.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVkaXJlY3RUb0xvZ2luLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdelmourhit/source/repos/FullStack/UniiivMWebAsembly/UniiivMWebAsembly/Pages/SimpleLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2ltcGxlTGF5b3V0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdelmourhit/source/repos/FullStack/UniiivMWebAsembly/UniiivMWebAsembly/Pages/StudentAdd.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudEFkZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdelmourhit/source/repos/FullStack/UniiivMWebAsembly/UniiivMWebAsembly/Pages/StudentDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudERldGFpbHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdelmourhit/source/repos/FullStack/UniiivMWebAsembly/UniiivMWebAsembly/Pages/StudentEdit.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudEVkaXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdelmourhit/source/repos/FullStack/UniiivMWebAsembly/UniiivMWebAsembly/Pages/StudentPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudFBhZ2UucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Abdelmourhit/source/repos/FullStack/UniiivMWebAsembly/UniiivMWebAsembly/Pages/UserPage.razor]

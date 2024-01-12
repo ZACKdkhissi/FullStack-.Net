@@ -1,0 +1,85 @@
+﻿@page "/students"
+@using UniiivMWebAsembly.Services
+@using UniiivMWebAsembly.Entities
+
+@inject StudentService StudentService
+@inject NavigationManager NavigationManager
+
+
+<h3>Student List</h3>
+<NavLink href="/addstudent" class="btn btn-primary">Add Student</NavLink>
+
+
+@if (students == null)
+{
+    <p><em>Loading...</em></p>
+}
+else if (students.Count == 0)
+{
+    <p>No students found.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Last Name</th>
+                <th>First Name</th>
+                <th>Enrollment Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in students)
+            {
+                <tr>
+                    <td>@student.ID</td>
+                    <td>@student.LastName</td>
+                    <td>@student.FirstMidName</td>
+                    <td>@student.EnrollmentDate.ToShortDateString()</td>
+                    <td>
+                        <!-- Buttons for actions -->
+                        <button class="btn btn-info" @onclick="() => ViewStudentDetails(student)">Details</button>
+                        <button class="btn btn-warning" @onclick="() => EditStudent(student)">Edit</button>
+                        <button class="btn btn-danger" @onclick="() => DeleteStudent(student)">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Student> students;
+
+    protected override async Task OnInitializedAsync()
+    {
+        students = await StudentService.GetStudentsAsync();
+    }
+
+    private void ViewStudentDetails(Student student)
+    {
+        NavigationManager.NavigateTo($"/student-details/{student.ID}");
+    }
+
+    // Method to edit student
+    private void EditStudent(Student student)
+    {
+        NavigationManager.NavigateTo($"/editstudent/{student.ID}");
+    }
+
+    // Method to delete student
+    private async Task DeleteStudent(Student student)
+    {
+        var result = await StudentService.DeleteStudentAsync(student.ID);
+        if (result.IsSuccessStatusCode)
+        {
+            // Refresh the student list after deletion
+            students = await StudentService.GetStudentsAsync();
+        }
+        else
+        {
+            // Handle errors here
+        }
+    }
+}

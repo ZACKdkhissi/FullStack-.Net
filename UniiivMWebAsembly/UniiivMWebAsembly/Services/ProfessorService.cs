@@ -1,4 +1,5 @@
 ﻿using System.Net.Http.Json;
+using UniiivMWebAsembly.Dto;
 using UniiivMWebAsembly.Entities;
 
 namespace UniiivMWebAsembly.Services
@@ -42,6 +43,11 @@ namespace UniiivMWebAsembly.Services
         {
             // L'URL doit correspondre à l'endpoint de votre API pour la mise à jour d'un professeur
             return await _httpClient.PutAsJsonAsync($"https://localhost:7059/api/Professor/{professor.ProfessorId}", professor);
+        }
+
+        public async Task<List<ProfessorDto>> GetProfessorsWithCoursesAsync()
+        {
+            return await _httpClient.GetFromJsonAsync<List<ProfessorDto>>("https://localhost:7059/api/Professor/withcourses");
         }
     }
 }

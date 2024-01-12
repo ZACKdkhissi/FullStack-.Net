@@ -135,6 +135,40 @@ namespace UniverMnagment.Controllers
             return NoContent(); // ou retourner un statut de succès avec des détails si nécessaire
         }
 
+        // GET: api/Professor/withcourses
+        [HttpGet("withcourses")]
+        public async Task<ActionResult<IEnumerable<ProfessorDto>>> GetProfessorsWithCourses()
+        {
+            var professors = await _context.Professors
+                .Select(p => new ProfessorDto
+                {
+                    ProfessorId = p.ProfessorId,
+                    Name = p.Name,
+                    Courses = p.CourseProfessors.Select(cp => new CourseDto
+                    {
+                        CourseId = cp.Course.CourseId,
+                        Title = cp.Course.Title
+                    }).ToList()
+                })
+                .ToListAsync();
+
+            return professors;
+        }
+
+
 
     }
+}
+
+public class ProfessorDto
+{
+    public int ProfessorId { get; set; }
+    public string Name { get; set; }
+    public List<CourseDto> Courses { get; set; }
+}
+
+public class CourseDto
+{
+    public int CourseId { get; set; }
+    public string Title { get; set; }
 }

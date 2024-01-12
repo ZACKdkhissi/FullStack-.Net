@@ -1,0 +1,48 @@
+﻿@page "/addstudent"
+@using UniiivMWebAsembly.Services
+@using UniiivMWebAsembly.Entities
+
+@inject StudentService StudentService
+@inject NavigationManager NavigationManager
+
+<h3>Add Student</h3>
+
+<EditForm Model="student" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <div class="form-group">
+        <label for="LastName">Last Name:</label>
+        <InputText @bind-Value="student.LastName" class="form-control" />
+        <ValidationMessage For="() => student.LastName" />
+    </div>
+    <div class="form-group">
+        <label for="FirstMidName">First Name:</label>
+        <InputText @bind-Value="student.FirstMidName" class="form-control" />
+        <ValidationMessage For="() => student.FirstMidName" />
+    </div>
+    <div class="form-group">
+        <label for="EnrollmentDate">Enrollment Date:</label>
+        <InputDate @bind-Value="student.EnrollmentDate" class="form-control" />
+        <ValidationMessage For="() => student.EnrollmentDate" />
+    </div>
+    <button type="submit" class="btn btn-primary">Add Student</button>
+</EditForm>
+
+@code {
+    private Student student = new Student();
+
+    private async Task HandleValidSubmit()
+    {
+        // Call the service to add the student
+        var result = await StudentService.AddStudentAsync(student);
+
+        if (result.IsSuccessStatusCode)
+        {
+            // Redirect to the student list page after successful addition
+            NavigationManager.NavigateTo("/students");
+        }
+        else
+        {
+            // Handle errors here
+        }
+    }
+}

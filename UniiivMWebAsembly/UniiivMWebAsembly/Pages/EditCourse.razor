@@ -1,0 +1,55 @@
+﻿@page "/edit-course/{CourseId:int}"
+@using UniiivMWebAsembly.Services
+@using UniiivMWebAsembly.Entities
+@inject CourseService CourseService
+@inject NavigationManager NavigationManager
+
+<h3>Edit Course</h3>
+
+@if (course == null)
+{
+    <p><em>Loading course data...</em></p>
+}
+else
+{
+    <EditForm Model="@course" OnValidSubmit="HandleValidSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <div class="form-group">
+            <label for="Title">Title:</label>
+            <InputText id="Title" class="form-control" @bind-Value="@course.Title" />
+        </div>
+
+        <div class="form-group">
+            <label for="Credits">Credits:</label>
+            <InputNumber id="Credits" class="form-control" @bind-Value="@course.Credits" />
+        </div>
+
+        <button type="submit" class="btn btn-success">Save Changes</button>
+    </EditForm>
+}
+
+@code {
+    [Parameter]
+    public int CourseId { get; set; }
+    private Course course;
+
+    protected override async Task OnInitializedAsync()
+    {
+        course = await CourseService.GetCourseAsync(CourseId);
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        var response = await CourseService.UpdateCourseAsync(course);
+        if (response.IsSuccessStatusCode)
+        {
+            NavigationManager.NavigateTo("/courses");
+        }
+        else
+        {
+            // Handle errors here
+        }
+    }
+}

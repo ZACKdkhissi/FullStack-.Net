@@ -1,4 +1,6 @@
-﻿namespace UniverMnagment.Entities
+﻿using System.Text.Json.Serialization;
+
+namespace UniverMnagment.Entities
 {
     public class Course
     {
@@ -6,8 +8,11 @@
         public string Title { get; set; }
         public int Credits { get; set; }
 
-        public ICollection<CourseProfessor> CourseProfessors { get; set; }
-        public ICollection<StudentCourse> StudentCourses { get; set; }
+        [JsonIgnore]
+        public ICollection<CourseProfessor> CourseProfessors { get; set; } = new List<CourseProfessor>();
+
+        [JsonIgnore]
+        public ICollection<StudentCourse> StudentCourses { get; set; } = new List<StudentCourse>();
     }
 
 }

@@ -1,0 +1,42 @@
+﻿@page "/add-course"
+@using UniiivMWebAsembly.Entities
+@using UniiivMWebAsembly.Services
+@inject CourseService CourseService
+@inject NavigationManager NavigationManager
+
+<h3>Add Course</h3>
+
+<EditForm Model="@newCourse" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label for="Title">Title:</label>
+        <InputText id="Title" class="form-control" @bind-Value="newCourse.Title" />
+    </div>
+
+    <div class="form-group">
+        <label for="Credits">Credits:</label>
+        <InputNumber id="Credits" class="form-control" @bind-Value="newCourse.Credits" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Course</button>
+</EditForm>
+
+@code {
+    private Course newCourse = new Course();
+
+    private async Task HandleValidSubmit()
+    {
+        var response = await CourseService.AddCourseAsync(newCourse);
+        if (response.IsSuccessStatusCode)
+        {
+            // Redirect to courses list or show success message
+            NavigationManager.NavigateTo("/courses");
+        }
+        else
+        {
+            // Handle errors
+        }
+    }
+}
