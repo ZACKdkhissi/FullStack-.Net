@@ -1,43 +1,43 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Abdelmourhit\\source\\repos\\FullStack\\UniiivMWebAsembly\\UniiivMWebAsembly\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "Id": "D:\\Projects\\ServiceWeb\\FullStack-.Net\\UniiivMWebAsembly\\UniiivMWebAsembly\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
       "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
     },
     {
-      "Id": "C:\\Users\\Abdelmourhit\\source\\repos\\FullStack\\UniiivMWebAsembly\\UniiivMWebAsembly\\obj\\Debug\\net8.0\\compressed\\opqragsupk.gz",
+      "Id": "D:\\Projects\\ServiceWeb\\FullStack-.Net\\UniiivMWebAsembly\\UniiivMWebAsembly\\obj\\Debug\\net8.0\\compressed\\9o5vtx1uqd.gz",
       "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
     },
     {
-      "Id": "C:\\Users\\Abdelmourhit\\source\\repos\\FullStack\\UniiivMWebAsembly\\UniiivMWebAsembly\\obj\\Debug\\net8.0\\scopedcss\\bundle\\UniiivMWebAsembly.styles.css",
+      "Id": "D:\\Projects\\ServiceWeb\\FullStack-.Net\\UniiivMWebAsembly\\UniiivMWebAsembly\\obj\\Debug\\net8.0\\scopedcss\\bundle\\UniiivMWebAsembly.styles.css",
       "PackagePath": "staticwebassets\\UniiivMWebAsembly.styles.css"
     },
     {
-      "Id": "C:\\Users\\Abdelmourhit\\source\\repos\\FullStack\\UniiivMWebAsembly\\UniiivMWebAsembly\\wwwroot\\css\\app.css",
+      "Id": "D:\\Projects\\ServiceWeb\\FullStack-.Net\\UniiivMWebAsembly\\UniiivMWebAsembly\\wwwroot\\css\\app.css",
       "PackagePath": "staticwebassets\\css\\app.css"
     },
     {
-      "Id": "C:\\Users\\Abdelmourhit\\source\\repos\\FullStack\\UniiivMWebAsembly\\UniiivMWebAsembly\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Id": "D:\\Projects\\ServiceWeb\\FullStack-.Net\\UniiivMWebAsembly\\UniiivMWebAsembly\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\Abdelmourhit\\source\\repos\\FullStack\\UniiivMWebAsembly\\UniiivMWebAsembly\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Id": "D:\\Projects\\ServiceWeb\\FullStack-.Net\\UniiivMWebAsembly\\UniiivMWebAsembly\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Abdelmourhit\\source\\repos\\FullStack\\UniiivMWebAsembly\\UniiivMWebAsembly\\wwwroot\\favicon.png",
+      "Id": "D:\\Projects\\ServiceWeb\\FullStack-.Net\\UniiivMWebAsembly\\UniiivMWebAsembly\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {
-      "Id": "C:\\Users\\Abdelmourhit\\source\\repos\\FullStack\\UniiivMWebAsembly\\UniiivMWebAsembly\\wwwroot\\icon-192.png",
+      "Id": "D:\\Projects\\ServiceWeb\\FullStack-.Net\\UniiivMWebAsembly\\UniiivMWebAsembly\\wwwroot\\icon-192.png",
       "PackagePath": "staticwebassets\\icon-192.png"
     },
     {
-      "Id": "C:\\Users\\Abdelmourhit\\source\\repos\\FullStack\\UniiivMWebAsembly\\UniiivMWebAsembly\\wwwroot\\index.html",
+      "Id": "D:\\Projects\\ServiceWeb\\FullStack-.Net\\UniiivMWebAsembly\\UniiivMWebAsembly\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
     {
-      "Id": "C:\\Users\\Abdelmourhit\\source\\repos\\FullStack\\UniiivMWebAsembly\\UniiivMWebAsembly\\wwwroot\\sample-data\\weather.json",
+      "Id": "D:\\Projects\\ServiceWeb\\FullStack-.Net\\UniiivMWebAsembly\\UniiivMWebAsembly\\wwwroot\\sample-data\\weather.json",
       "PackagePath": "staticwebassets\\sample-data\\weather.json"
     },
     {

@@ -1,6 +1,7 @@
 ﻿@page "/professors/add"
 @using UniiivMWebAsembly.Services
 @using UniiivMWebAsembly.Entities
+@inject NavigationManager Navigation
 @inject ProfessorService ProfessorService
 
 <h2>Add Professor</h2>
@@ -26,7 +27,7 @@
         var response = await ProfessorService.AddProfessorAsync(newProfessor);
         if (response.IsSuccessStatusCode)
         {
-            // Gérer le succès, par exemple en redirigeant vers la liste des professeurs
+            Navigation.NavigateTo("/professors");
         }
         else
         {

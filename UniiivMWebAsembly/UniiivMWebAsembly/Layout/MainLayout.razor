@@ -1,16 +1,39 @@
-﻿@inherits LayoutComponentBase
+﻿@using UniiivMWebAsembly.Services
+@inherits LayoutComponentBase
+@inject NavigationManager NavigationManager
+@inject TokenService TokenService
+
 <div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
+    @if (!(IsLoginPage() ||IsRegisterPage()))
+    {
+        <div class="sidebar">
+            <NavMenu />
+        </div>
+    }
 
     <main>
-        <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
-        </div>
-
         <article class="content px-4">
             @Body
         </article>
     </main>
 </div>
+
+@code {
+    private bool IsLoginPage()
+    {
+        return NavigationManager.Uri.EndsWith("/login");
+    }
+
+    private bool IsRegisterPage()
+    {
+        return NavigationManager.Uri.EndsWith("/register");
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (!await TokenService.IsTokenAvailableAsync())
+        {
+            NavigationManager.NavigateTo("/login");
+        }
+    }
+}

@@ -28,6 +28,7 @@ else
                 <th>Course ID</th>
                 <th>Title</th>
                 <th>Credits</th>
+                <th />
             </tr>
         </thead>
         <tbody>
@@ -80,10 +81,6 @@ else
             if (response.IsSuccessStatusCode)
             {
                 courses = courses.Where(c => c.CourseId != courseId).ToList();
-            }
-            else
-            {
-                // Handle the error, possibly with a user notification
             }
         }
     }

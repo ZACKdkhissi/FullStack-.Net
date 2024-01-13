@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Abdelmourhit\\source\\repos\\FullStack\\UniverMnagment\\UniverMnagment\\UniverMnagment.csproj": {}
+    "D:\\Projects\\ServiceWeb\\FullStack-.Net\\UniverMnagment\\UniverMnagment\\UniverMnagment.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Abdelmourhit\\source\\repos\\FullStack\\UniverMnagment\\UniverMnagment\\UniverMnagment.csproj": {
+    "D:\\Projects\\ServiceWeb\\FullStack-.Net\\UniverMnagment\\UniverMnagment\\UniverMnagment.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Abdelmourhit\\source\\repos\\FullStack\\UniverMnagment\\UniverMnagment\\UniverMnagment.csproj",
+        "projectUniqueName": "D:\\Projects\\ServiceWeb\\FullStack-.Net\\UniverMnagment\\UniverMnagment\\UniverMnagment.csproj",
         "projectName": "UniverMnagment",
-        "projectPath": "C:\\Users\\Abdelmourhit\\source\\repos\\FullStack\\UniverMnagment\\UniverMnagment\\UniverMnagment.csproj",
-        "packagesPath": "C:\\Users\\Abdelmourhit\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Abdelmourhit\\source\\repos\\FullStack\\UniverMnagment\\UniverMnagment\\obj\\",
+        "projectPath": "D:\\Projects\\ServiceWeb\\FullStack-.Net\\UniverMnagment\\UniverMnagment\\UniverMnagment.csproj",
+        "packagesPath": "C:\\Users\\Maximoss\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\ServiceWeb\\FullStack-.Net\\UniverMnagment\\UniverMnagment\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Abdelmourhit\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Maximoss\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +40,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.0, )"
@@ -53,10 +61,6 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.0, )"
-            },
-            "MySql.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[7.0.10, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

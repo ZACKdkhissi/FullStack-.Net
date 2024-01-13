@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Abdelmourhit\\source\\repos\\FullStack\\UniiivMWebAsembly\\UniiivMWebAsembly\\UniiivMWebAsembly.csproj": {}
+    "D:\\Projects\\ServiceWeb\\FullStack-.Net\\UniiivMWebAsembly\\UniiivMWebAsembly\\UniiivMWebAsembly.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Abdelmourhit\\source\\repos\\FullStack\\UniiivMWebAsembly\\UniiivMWebAsembly\\UniiivMWebAsembly.csproj": {
+    "D:\\Projects\\ServiceWeb\\FullStack-.Net\\UniiivMWebAsembly\\UniiivMWebAsembly\\UniiivMWebAsembly.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Abdelmourhit\\source\\repos\\FullStack\\UniiivMWebAsembly\\UniiivMWebAsembly\\UniiivMWebAsembly.csproj",
+        "projectUniqueName": "D:\\Projects\\ServiceWeb\\FullStack-.Net\\UniiivMWebAsembly\\UniiivMWebAsembly\\UniiivMWebAsembly.csproj",
         "projectName": "UniiivMWebAsembly",
-        "projectPath": "C:\\Users\\Abdelmourhit\\source\\repos\\FullStack\\UniiivMWebAsembly\\UniiivMWebAsembly\\UniiivMWebAsembly.csproj",
-        "packagesPath": "C:\\Users\\Abdelmourhit\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Abdelmourhit\\source\\repos\\FullStack\\UniiivMWebAsembly\\UniiivMWebAsembly\\obj\\",
+        "projectPath": "D:\\Projects\\ServiceWeb\\FullStack-.Net\\UniiivMWebAsembly\\UniiivMWebAsembly\\UniiivMWebAsembly.csproj",
+        "packagesPath": "C:\\Users\\Maximoss\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\ServiceWeb\\FullStack-.Net\\UniiivMWebAsembly\\UniiivMWebAsembly\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Abdelmourhit\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Maximoss\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,12 +40,20 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Blazored.LocalStorage": {
+              "target": "Package",
+              "version": "[4.4.0, )"
+            },
             "Microsoft.AspNetCore.Components.WebAssembly": {
               "target": "Package",
               "version": "[8.0.0, )"
             },
             "Microsoft.AspNetCore.Components.WebAssembly.DevServer": {
               "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Http": {
               "target": "Package",
               "version": "[8.0.0, )"
             },
@@ -73,12 +81,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-              "version": "[8.0.0, 8.0.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"

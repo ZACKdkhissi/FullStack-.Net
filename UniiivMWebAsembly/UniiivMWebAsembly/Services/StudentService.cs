@@ -13,10 +13,12 @@ namespace UniiivMWebAsembly.Services
     public class StudentService
     {
         private readonly HttpClient _httpClient;
+        private readonly TokenService _tokenService;
 
-        public StudentService(HttpClient httpClient)
+        public StudentService(HttpClient httpClient, TokenService tokenService)
         {
             _httpClient = httpClient;
+            _tokenService = tokenService;
         }
 
         public async Task<List<Student>> GetStudentsAsync()
@@ -26,14 +28,11 @@ namespace UniiivMWebAsembly.Services
 
         public async Task<HttpResponseMessage> AddStudentAsync(Student student)
         {
-            // Envoie une requête POST pour ajouter l'étudiant à votre API
-            // Assurez-vous d'ajuster l'URL en fonction de votre API
             return await _httpClient.PostAsJsonAsync("https://localhost:7059/api/Student", student);
         }
 
         public async Task<HttpResponseMessage> DeleteStudentAsync(int studentId)
         {
-            // Envoyez une demande DELETE à votre API pour supprimer l'étudiant avec l'ID spécifié.
             var response = await _httpClient.DeleteAsync($"https://localhost:7059/api/Student/{studentId}");
 
             return response;
@@ -49,7 +48,6 @@ namespace UniiivMWebAsembly.Services
             }
             else
             {
-                // Gérer les réponses non réussies (par exemple, retourner null ou lever une exception).
                 return null;
             }
         }
@@ -64,7 +62,6 @@ namespace UniiivMWebAsembly.Services
             }
             else
             {
-                // Gérer les erreurs ici, par exemple, en lançant une exception personnalisée.
                 throw new Exception("La mise à jour de l'étudiant a échoué.");
             }
         }

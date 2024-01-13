@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq;
 using UniverMnagment.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace UniverMnagment.Controllers
 {
