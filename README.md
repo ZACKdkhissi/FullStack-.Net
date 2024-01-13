@@ -8,7 +8,7 @@ Ce projet est une application de gestion d'université développée en utilisant
 - Blazor WebAssembly
 - Entity Framework Core (pour l'accès à la base de données)
 - HTML/CSS (pour l'interface utilisateur)
-- SqlServer (pour la base de donnee)
+- SqlServer (comme base la base de données)
 
 ## Configuration du Projet
 
