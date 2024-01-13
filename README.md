@@ -13,13 +13,8 @@ Ce projet est une application de gestion d'université développée en utilisant
 ## Configuration du Projet
 
 1. Assurez-vous d'avoir [.NET Core SDK](https://dotnet.microsoft.com/download) installé sur votre machine.
-2. Clonez le projet depuis ce référentiel.
-
-
-git clone https://github.com/ZACKdkhissi/FullStack-.Net.git
-cd FullStack-.Net
-
-#Ouvrez le projet dans votre éditeur de code préféré.
+2. Clonez le projet depuis ce référentiel. (git clone https://github.com/ZACKdkhissi/FullStack-.Net.git \ cd FullStack-.Net)
+3. Ouvrez le projet dans votre éditeur de code préféré.
 
 ## Configuration de la Base de Données
 
