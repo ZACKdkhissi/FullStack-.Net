@@ -31,19 +31,18 @@ cd FullStack-.Net
 
 ## Fonctionnalités
 
- Gestion des étudiants : avec cette fonctionnalite nous aurons la possibilite d'ajouter, de modifier, de visualiser et de supprimer un etudiant.
- Gestion des cours : cette fonctionnalite va nous permettre d'jouter, de modifier, de visualiser et de supprimer un cours.
- Gestion des professeurs : avec cette fonctionnalite nous aurons la possibilite d'ajouter, de modifier, de visualiser et de supprimer un professeur.
- Assigner un cours a un professeur.
- Assigner un cours a un etudiant.
- 
- S'Enregistrer et puis s'Authentifier.
+- Gestion des étudiants : avec cette fonctionnalite nous aurons la possibilite d'ajouter, de modifier, de visualiser et de supprimer un etudiant.
+- Gestion des cours : cette fonctionnalite va nous permettre d'jouter, de modifier, de visualiser et de supprimer un cours.
+- Gestion des professeurs : avec cette fonctionnalite nous aurons la possibilite d'ajouter, de modifier, de visualiser et de supprimer un professeur.
+- Assigner un cours a un professeur.
+- Assigner un cours a un etudiant.
+- S'Enregistrer et puis s'Authentifier.
 
 
 
 ## Auteurs
 
--Guemmar Oussama
--Dkhssi Zakaria
--Laabidi Khawla 
--Ibrahim Hassan Aboubaker
+- Guemmar Oussama
+- Dkhssi Zakaria
+- Laabidi Khawla 
+- Ibrahim Hassan Aboubaker
