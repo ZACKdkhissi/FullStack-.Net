@@ -47,5 +47,3 @@ Auteurs
 -Dkhssi Zakaria
 -Laabidi Khawla 
 -Ibrahim Hassan Aboubaker
-
-Ce projet est sous licence MIT - voir le fichier LICENSE pour plus de détails.
